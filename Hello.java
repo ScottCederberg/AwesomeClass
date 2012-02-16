@@ -1,11 +1,21 @@
 public class Hello {
 
+  private static String getSimpleGreeting() {
+    return "Hello, git users!  You're looking awesome today!";
+  }
+
+  private static String getFancyGreeting() {
+    return "~~~ You're a fancy fellow.  Here's a fancy greeting. ~~~\n"
+        + "___ Ooooh la la ___";
+  }
+
   public static void main(String[] args) {
+    String greeting;
     if (args.length > 0 && "-f".equals(args[0])) {
-      System.out.println("~~~ You're a fancy fellow.  Here's a fancy greeting. ~~~");
-      System.out.println("___ Ooooh la la ___");
+      greeting = getFancyGreeting();
     } else {
-      System.out.println("Hello, git users!  You're looking awesome today!");
+      greeting = getSimpleGreeting();
     }
+    System.out.println(greeting);
   }
 }
